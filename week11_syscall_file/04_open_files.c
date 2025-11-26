@@ -16,12 +16,6 @@ int main(int argc, char* argv[])
     int file_nums = argc - 1;
     int* file_list = (int*)malloc(sizeof(int) * file_nums);
 
-    if(file_list == NULL)
-    {
-        perror("malloc");
-        return 1;
-    }
-
     for(int i = 0; i < file_nums; i++)
     {
         int fd = open(argv[i + 1], O_RDONLY);
